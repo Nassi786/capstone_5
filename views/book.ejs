@@ -1,0 +1,9 @@
+<%- include('layout', { body: '' }) %>
+<h2>Add a Book</h2>
+<form method="POST" action="/book">
+  <input name="title" placeholder="Title" required />
+  <input name="author" placeholder="Author" />
+  <input name="rating" type="number" min="1" max="5" required />
+  <textarea name="review" placeholder="Your notes..."></textarea>
+  <button type="submit">Save</button>
+</form>

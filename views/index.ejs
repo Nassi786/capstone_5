@@ -1,0 +1,17 @@
+<%- include('layout', { body: '' }) %>
+<a href="/book">Add New Book</a>
+<ul>
+  <% books.forEach(book => { %>
+    <li>
+      <h3><%= book.title %> by <%= book.author %></h3>
+      <% if (book.cover_id) { %>
+        <img src="https://covers.openlibrary.org/b/id/<%= book.cover_id %>-M.jpg" />
+      <% } %>
+      <p>Rating: <%= book.rating %>/5</p>
+      <p><%= book.review %></p>
+      <form action="/delete/<%= book.id %>" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
